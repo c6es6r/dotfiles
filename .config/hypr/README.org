@@ -13,14 +13,15 @@ exec-once = waybar
 exec-once = hyprpaper
 exec-once = udiskie
 exec-once = mako
-exec-once = /usr/lib/polkit-kde-authentication-agent-1
+# exec-once = /usr/lib/polkit-kde-authentication-agent-1
+exec-once = lxqt-policykit-agent
 exec-once = emacs --daemon
 #+end_src
 
 * [[https://wiki.hyprland.org/Configuring/Keywords/][Keywords]]
 #+begin_src conf
 $terminal = kitty
-$fileManager = thunar
+$fileManager = nemo
 $menu = wofi --show drun
 $webBrowser = chromium
 $screenshot = grim -g "$(slurp)"
@@ -37,10 +38,10 @@ env = XCURSOR_SIZE,24
 ** [[https://wiki.hyprland.org/Configuring/Variables/#input][Input]]
 #+begin_src conf
 input {
-    kb_layout = de
+    kb_layout = us, de
     kb_variant =
     kb_model =
-    kb_options =
+    kb_options = grp:win_space_toggle
     kb_rules =
 
     follow_mouse = 1
@@ -65,7 +66,7 @@ general {
     col.active_border = rgb(7aa2f7) # rgb(ff9e64) # rgb(da8548)
     col.inactive_border = rgb(282c34)
 
-    layout = master
+    layout = dwindle
 
     # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
     allow_tearing = false
@@ -163,15 +164,15 @@ $mainMod = SUPER
 #+begin_src conf
 bind = $mainMod,       RETURN, exec, $terminal
 bind = $mainMod,       C, killactive,
-bind = $mainMod,       E,     exec, $fileManager
-bind = $mainMod,       W,     exec, $webBrowser
-bind = $mainMod,       SPACE, togglefloating,
-bind = $mainMod,       R,     exec, $menu
-bind = $mainMod SHIFT, B,     exec, $reloadWaybar
-bind = $mainMod SHIFT, G,     exec, $reloadHyprpaper
-bind = $mainMod SHIFT, Q,     exec, wlogout
-bind = $mainMod SHIFT, S,     exec, $screenshot
-bind = $mainMod,       F,     fullscreen
+bind = $mainMod,       E, exec, $fileManager
+bind = $mainMod,       W, exec, $webBrowser
+bind = $mainMod,       T, togglefloating,
+bind = $mainMod,       R, exec, $menu
+bind = $mainMod SHIFT, B, exec, $reloadWaybar
+bind = $mainMod SHIFT, G, exec, $reloadHyprpaper
+bind = $mainMod SHIFT, Q, exec, wlogout
+bind = $mainMod SHIFT, S, exec, $screenshot
+bind = $mainMod,       F, fullscreen
 #+end_src
 
 ** Moving Focus
