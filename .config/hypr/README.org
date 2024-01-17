@@ -162,17 +162,22 @@ $mainMod = SUPER
 
 ** Quicklaunching Programs
 #+begin_src conf
-bind = $mainMod,       RETURN, exec, $terminal
-bind = $mainMod,       C, killactive,
-bind = $mainMod,       E, exec, $fileManager
-bind = $mainMod,       W, exec, $webBrowser
-bind = $mainMod,       T, togglefloating,
-bind = $mainMod,       R, exec, $menu
+bind = $mainMod, RETURN, exec, $terminal
+bind = $mainMod, E,      exec, $fileManager
+bind = $mainMod, W,      exec, $webBrowser
+bind = $mainMod, R,      exec, $menu
+bind = $mainMod, G,      exec, lutris
+#+end_src
+
+** Executing Commands
+#+begin_src conf
 bind = $mainMod SHIFT, B, exec, $reloadWaybar
 bind = $mainMod SHIFT, G, exec, $reloadHyprpaper
 bind = $mainMod SHIFT, Q, exec, wlogout
 bind = $mainMod SHIFT, S, exec, $screenshot
 bind = $mainMod,       F, fullscreen
+bind = $mainMod,       T, togglefloating,
+bind = $mainMod,       C, killactive,
 #+end_src
 
 ** Moving Focus
