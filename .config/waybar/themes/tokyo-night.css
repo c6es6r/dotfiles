@@ -34,7 +34,7 @@ window#waybar {
 	border-radius: 5px;
 }
 
-#window, #tray, #pulseaudio, #cpu, #memory, #network, #clock  {
+#window, #tray, #pulseaudio, #cpu, #memory, #network, #clock, #wlogout  {
 	background-color: #24283b;
 	padding: 5px 10px;
 	margin: 5px 0px;
@@ -55,7 +55,6 @@ window#waybar {
 
 #network {
 	color: #f7768e;}
-
 
 #clock {
     color: #b48ead;
