@@ -1,4 +1,4 @@
 #+title: Readme
 
 * About This Repo
-The are my dotfiles. They are nothing special but they work very well for me. Feel free to use my configurations.
+These are my dotfiles. They are nothing special but they work very well for me. Feel free to use my configurations.
