@@ -1,3 +1,4 @@
+/*
 #window {
         font-size: 18px;
         font-family: "monospace";
@@ -14,4 +15,21 @@
         border-color: #ff9e64;
         background-color: #1a1b26;
 }
+*/
 
+#window {
+  font-size: 18px;
+  font-family: "monospace";
+  color: #fbf1c7;
+  background-color: #282828;
+}
+
+#entry:selected {
+  background-color: #689d6a;
+}
+
+#input {
+  border-radius: 0;
+  border-color: #689d6a;
+  background-color: #282828;
+}

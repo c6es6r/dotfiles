@@ -13,20 +13,21 @@ exec-once = waybar
 exec-once = hyprpaper
 exec-once = udiskie
 exec-once = mako
-# exec-once = /usr/lib/polkit-kde-authentication-agent-1
-exec-once = lxqt-policykit-agent
+exec-once = lxsession
 exec-once = emacs --daemon
+exec-once = nm-applet
 #+end_src
 
 * [[https://wiki.hyprland.org/Configuring/Keywords/][Keywords]]
 #+begin_src conf
-$terminal = kitty
-$fileManager = nemo
+$terminal = alacritty
+$fileManager = thunar
 $menu = wofi --show drun
-$webBrowser = chromium
+$webBrowser = brave
 $screenshot = grim -g "$(slurp)"
 $reloadWaybar = killall waybar && waybar
 $reloadHyprpaper = killall hyprpaper && hyprpaper
+$emacs = emacsclient -a = -c
 #+end_src
 
 * [[https://wiki.hyprland.org/Configuring/Variables/][Environment Variables]]
@@ -60,13 +61,13 @@ input {
 general {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-    gaps_in = 5
-    gaps_out = 10
+    gaps_in = 10
+    gaps_out = 25
     border_size = 2
-    col.active_border = rgb(7aa2f7) # rgb(ff9e64) # rgb(da8548)
-    col.inactive_border = rgb(282c34)
+    col.active_border = rgb(689d6a) # rgb(7aa2f7) # rgb(ff9e64) # rgb(da8548)
+    col.inactive_border = rgb(8ec07c)
 
-    layout = dwindle
+    layout = master
 
     # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
     allow_tearing = false
@@ -78,7 +79,7 @@ general {
 decoration {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-    rounding = 4
+    rounding = 0 # 4
 
     blur {
         enabled = true
@@ -162,11 +163,13 @@ $mainMod = SUPER
 
 ** Quicklaunching Programs
 #+begin_src conf
-bind = $mainMod, RETURN, exec, $terminal
-bind = $mainMod, E,      exec, $fileManager
-bind = $mainMod, W,      exec, $webBrowser
-bind = $mainMod, R,      exec, $menu
-bind = $mainMod, G,      exec, lutris
+bind = $mainMod,         RETURN, exec, $terminal
+bind = $mainMod,         E,      exec, $fileManager
+bind = $mainMod,         W,      exec, $webBrowser
+bind = $mainMod SHIFT,   RETURN, exec, $menu
+bind = $mainMod,         R,      exec, dmenu_run
+bind = $mainMod, G,              exec, lutris
+bind = $mainMod, X,              exec, $emacs
 #+end_src
 
 ** Executing Commands
@@ -176,8 +179,9 @@ bind = $mainMod SHIFT, G, exec, $reloadHyprpaper
 bind = $mainMod SHIFT, Q, exec, wlogout
 bind = $mainMod SHIFT, S, exec, $screenshot
 bind = $mainMod,       F, fullscreen
-bind = $mainMod,       T, togglefloating,
-bind = $mainMod,       C, killactive,
+bind = $mainMod,       T, togglefloating
+bind = $mainMod,       C, killactive
+bind = $mainMod,       M, exit
 #+end_src
 
 ** Moving Focus

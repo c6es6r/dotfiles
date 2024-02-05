@@ -14,6 +14,7 @@ alias l="lsd"
 #pacman
 alias update="sudo pacman -Syyu"
 alias install="sudo pacman -S"
+alias uninstall="sudo pacman -Rsnc"
 
 # paru
 alias updateaur="paru -Syyua"
@@ -49,8 +50,6 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
-
-
 
 # PS1="[\u@\h]-[\w] \n$ "
 

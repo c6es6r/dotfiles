@@ -6,7 +6,7 @@
     "spacing": 1, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
     ],
     "modules-center": [
         "hyprland/window"
@@ -168,8 +168,8 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}", //"{volume}% {icon} {format_source}",
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
@@ -182,17 +182,9 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
-    "custom/filemanager": {
-        "format": "",
-        "on-click": "nemo",
-        "tooltip": false
-    }
+
 }
