@@ -5,8 +5,9 @@ window {
 	background-color: transparent;
 }
 button {
-    color: #a9b1d6;
-	background-color: #1a1b26;
+    color: #ebdbb2;
+	background-color: #282828;
+    border-color: #8ec07c;
 	border-style: solid;
     border-radius: 5px;
 	background-repeat: no-repeat;
@@ -16,7 +17,7 @@ button {
 }
 
 button:focus, button:active, button:hover {
-	background-color: #ff9e64;
+	background-color: #8ec07c;
 	outline-style: none;
 }
 

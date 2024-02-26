@@ -51,11 +51,4 @@ ex ()
   fi
 }
 
-# PS1="[\u@\h]-[\w] \n$ "
-
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-
-PS1="\e[1;33m[\u@\h]\e[0;35m-\e[0;31m[\w]\e[0;35m \$(parse_git_branch)\n$ \e[0;0m"
-
+PROMPT="[%F{blue}%n%f%F{yellow}@%f%F{blue}%m%f %F{yellow}%~%f] %F{blue}%#%f "

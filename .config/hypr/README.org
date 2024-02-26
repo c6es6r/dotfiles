@@ -1,6 +1,30 @@
 #+title: Readme
 #+property: header-args :tangle hyprland.conf
 
+* Table Of Contents :toc:
+- [[#monitors][Monitors]]
+- [[#autostart-applications][Autostart Applications]]
+- [[#keywords][Keywords]]
+- [[#environment-variables][Environment Variables]]
+  - [[#cursor-size][Cursor Size]]
+  - [[#input][Input]]
+  - [[#window-settings][Window Settings]]
+  - [[#gestures][Gestures]]
+  - [[#miscellaneous][Miscellaneous]]
+- [[#keybinds][Keybinds]]
+  - [[#set-main-mod-key][Set Main Mod Key]]
+  - [[#quicklaunching-programs][Quicklaunching Programs]]
+  - [[#executing-commands][Executing Commands]]
+  - [[#moving-focus][Moving Focus]]
+  - [[#switch-workspaces][Switch Workspaces]]
+  - [[#move-active-window-to-a-workspace][Move Active Window To A Workspace]]
+  - [[#scroll-through-workspaces][Scroll Through Workspaces]]
+  - [[#resize-windows][Resize Windows]]
+  - [[#scratchpad-workspace][Scratchpad Workspace]]
+  - [[#audio-controlls][Audio Controlls]]
+- [[#workspace-rules][Workspace Rules]]
+  - [[#default-workspaces-for-monitors][Default Workspaces For Monitors]]
+
 * [[https://wiki.hyprland.org/Configuring/Monitors/][Monitors]]
 #+begin_src conf
 monitor = DP-1,     1920x1080@165,  0x0,    1
@@ -20,14 +44,14 @@ exec-once = nm-applet
 
 * [[https://wiki.hyprland.org/Configuring/Keywords/][Keywords]]
 #+begin_src conf
-$terminal = alacritty
-$fileManager = thunar
-$menu = wofi --show drun
-$webBrowser = brave
-$screenshot = grim -g "$(slurp)"
-$reloadWaybar = killall waybar && waybar
+$terminal        = kitty
+$fileManager     = thunar
+$menu            = wofi --show drun
+$webBrowser      = brave-beta
+$screenshot      = grim -g "$(slurp)"
+$reloadWaybar    = killall waybar && waybar
 $reloadHyprpaper = killall hyprpaper && hyprpaper
-$emacs = emacsclient -a = -c
+$emacs           = emacsclient -a = -c
 #+end_src
 
 * [[https://wiki.hyprland.org/Configuring/Variables/][Environment Variables]]
@@ -61,8 +85,8 @@ input {
 general {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-    gaps_in = 10
-    gaps_out = 25
+    gaps_in = 5
+    gaps_out = 10
     border_size = 2
     col.active_border = rgb(689d6a) # rgb(7aa2f7) # rgb(ff9e64) # rgb(da8548)
     col.inactive_border = rgb(8ec07c)
@@ -79,7 +103,7 @@ general {
 decoration {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-    rounding = 0 # 4
+    rounding = 0
 
     blur {
         enabled = true
@@ -163,20 +187,19 @@ $mainMod = SUPER
 
 ** Quicklaunching Programs
 #+begin_src conf
-bind = $mainMod,         RETURN, exec, $terminal
-bind = $mainMod,         E,      exec, $fileManager
-bind = $mainMod,         W,      exec, $webBrowser
-bind = $mainMod SHIFT,   RETURN, exec, $menu
-bind = $mainMod,         R,      exec, dmenu_run
-bind = $mainMod, G,              exec, lutris
-bind = $mainMod, X,              exec, $emacs
+bind = $mainMod, RETURN, exec, $terminal
+bind = $mainMod, E,      exec, $fileManager
+bind = $mainMod, W,      exec, $webBrowser
+bind = $mainMod, R,      exec, $menu
+bind = $mainMod, G,      exec, lutris
+bind = $mainMod, X,      exec, $emacs
+bind = $mainMod SHIFT, Q, exec, wlogout
 #+end_src
 
 ** Executing Commands
 #+begin_src conf
 bind = $mainMod SHIFT, B, exec, $reloadWaybar
 bind = $mainMod SHIFT, G, exec, $reloadHyprpaper
-bind = $mainMod SHIFT, Q, exec, wlogout
 bind = $mainMod SHIFT, S, exec, $screenshot
 bind = $mainMod,       F, fullscreen
 bind = $mainMod,       T, togglefloating
@@ -256,6 +279,12 @@ bindm = $mainMod, mouse:273, resizewindow
 #+begin_src conf
 bind = $mainMod      , S, togglespecialworkspace, magic
 bind = $mainMod SHIFT, S, movetoworkspace       , special:magic
+#+end_src
+
+** Audio Controlls
+#+begin_src conf
+bind =, xf86audioraisevolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
+bind =, xf86audiolowervolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
 #+end_src
 
 * [[https://wiki.hyprland.org/Configuring/Workspace-Rules/][Workspace Rules]]
