@@ -47,7 +47,7 @@ exec-once = nm-applet
 $terminal        = kitty
 $fileManager     = thunar
 $menu            = wofi --show drun
-$webBrowser      = brave-beta
+$webBrowser      = brave
 $screenshot      = grim -g "$(slurp)"
 $reloadWaybar    = killall waybar && waybar
 $reloadHyprpaper = killall hyprpaper && hyprpaper
@@ -88,8 +88,8 @@ general {
     gaps_in = 5
     gaps_out = 10
     border_size = 2
-    col.active_border = rgb(689d6a) # rgb(7aa2f7) # rgb(ff9e64) # rgb(da8548)
-    col.inactive_border = rgb(8ec07c)
+    col.active_border = rgb(dd9999)
+    col.inactive_border = rgb(a06666) # rgb(689d6a) # rgb(7aa2f7) # rgb(ff9e64) # rgb(da8548)
 
     layout = master
 
@@ -155,9 +155,9 @@ master {
 #+end_src
 
 *** [[https://wiki.hyprland.org/Configuring/Window-Rules/][Window Rules]]
-#+begin_src conf
-windowrulev2 = nomaximizerequest, class:.*
-#+end_src
+;; #+begin_src conf
+;; windowrulev2 = nomaximizerequest, class:.*
+;; #+end_src
 
 ** [[https://wiki.hyprland.org/Configuring/Variables/#gestures][Gestures]]
 #+begin_src conf
@@ -173,11 +173,11 @@ misc {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
     force_default_wallpaper = 0 # Set to 0 to disable the anime mascot wallpapers
 }
-
- device:epic-mouse-v1 {
-    sensitivity = -0.5
-}
 #+end_src
+
+;; device:epic-mouse-v1 {
+;;     sensitivity = -0.5
+;; }
 
 * [[https://wiki.hyprland.org/Configuring/Binds/][Keybinds]]
 ** Set Main Mod Key
@@ -187,13 +187,15 @@ $mainMod = SUPER
 
 ** Quicklaunching Programs
 #+begin_src conf
-bind = $mainMod, RETURN, exec, $terminal
-bind = $mainMod, E,      exec, $fileManager
-bind = $mainMod, W,      exec, $webBrowser
-bind = $mainMod, R,      exec, $menu
-bind = $mainMod, G,      exec, lutris
-bind = $mainMod, X,      exec, $emacs
+bind = $mainMod, RETURN,  exec, $terminal
+bind = $mainMod, E,       exec, $fileManager
+bind = $mainMod, W,       exec, $webBrowser
+bind = $mainMod, R,       exec, $menu
+bind = $mainMod, G,       exec, lutris
+bind = $mainMod, X,       exec, $emacs
 bind = $mainMod SHIFT, Q, exec, wlogout
+bind = $mainMod, D,       exec, discord
+bind = $mainMod, S,       exec, steam
 #+end_src
 
 ** Executing Commands
@@ -277,8 +279,8 @@ bindm = $mainMod, mouse:273, resizewindow
 
 ** Scratchpad Workspace
 #+begin_src conf
-bind = $mainMod      , S, togglespecialworkspace, magic
-bind = $mainMod SHIFT, S, movetoworkspace       , special:magic
+#bind = $mainMod      , S, togglespecialworkspace, magic
+#bind = $mainMod SHIFT, S, movetoworkspace       , special:magic
 #+end_src
 
 ** Audio Controlls

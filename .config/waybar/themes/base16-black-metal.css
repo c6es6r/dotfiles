@@ -1,15 +1,33 @@
+#000000
+#121212
+#222222
+#333333
+#999999
+#c1c1c1
+#999999
+#c1c1c1
+#5f8787
+#aaaaaa
+#a06666
+#dd9999
+#aaaaaa
+#888888
+#999999
+#444444
+
+
 * {
     border: none;
     border-radius: 0px;
     font-family: "Inconsolata";
     font-size: 16px;
     min-height: 0;
-    color: #ebdbb2;
+    color: white;
 }
 
 window#waybar {
     border-bottom-style: inset;
-    border-bottom: 4px solid #689d6a;
+    border-bottom: 4px solid #5f8787;
     background: transparent /*#1d2021*/;
 }
 
@@ -19,17 +37,17 @@ window#waybar {
 
 /* Workspace Buttons */
 #workspaces button label{
-    color: #689d6a;
+    color: #5f8787;
 }
 #workspaces button.focused label {
-    color: #1d2021;
+    color: #121212;
 }
 #workspaces button.focused {
-    background: #689d6a; 
+    background: #5f8787;
 }
 
 #mode {
-    background-color: #cc241d;
+    background-color: #dd9999;
     color: white;
 }
 
@@ -38,47 +56,21 @@ window#waybar {
     margin: 0 10px;
 }
 
-
-#idle_inhibitor {
-    padding: 0 10px;
-}
-
-#idle_inhibitor.activated {
-    background-color: #689d6a;
-    color: #1d2021;
-}
-
-
-#custom-music {
-    color: #b8bb26;
-    margin: 0 15px;
-    padding: 0 20px;
-    border-bottom: 4px solid #b8bb26;
-
-}
-
-
-#network.disconnected {
-    color: #cc241d;
-    border-bottom: 4px solid #cc241d;
-}
-
-
 #pulseaudio.muted {
     padding: 0 20px;
-    color: #cc241d;
-    border-bottom: 4px solid #cc241d;
+    color: #999999;
+    border-bottom: 4px solid #999999;
 }
 
 
 #clock {
     margin: 0;
-    color: #fabd2f;
-    border-bottom: 4px solid #fabd2f;
+    color: #dd9999;
+    border-bottom: 4px solid #dd9999;
 }
 
 #window {
     margin: 0;
-    color: #d3869b;
-    border-bottom: 4px solid #d3869b;
+    color: #dd9999;
+    border-bottom: 4px solid #dd9999;
 }
