@@ -17,7 +17,7 @@
         "cpu",
         "memory",
         //"temperature",
-        //"network",
+        "network",
         "clock"
     ],
     // Modules configuration

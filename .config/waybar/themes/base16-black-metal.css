@@ -1,35 +1,15 @@
-#000000
-#121212
-#222222
-#333333
-#999999
-#c1c1c1
-#999999
-#c1c1c1
-#5f8787
-#aaaaaa
-#a06666
-#dd9999
-#aaaaaa
-#888888
-#999999
-#444444
-
-
 * {
     border: none;
     border-radius: 0px;
     font-family: "Inconsolata";
     font-size: 16px;
     min-height: 0;
-    color: white;
+    color: #ffffff;
 }
 
 window#waybar {
     border-bottom-style: inset;
-    border-bottom: 4px solid #5f8787;
-    background: transparent /*#1d2021*/;
-}
+    border-bottom: 4px solid #5f8787;}
 
 #workspaces, #clock, #custom-music, #window { 
     font-weight: 800;

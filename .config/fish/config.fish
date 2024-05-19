@@ -8,3 +8,4 @@ colorscript random
 alias ls="lsd"
 alias ll="lsd -l"
 alias la="lsd -la"
+export PATH="$HOME/.local/bin:$PATH"
