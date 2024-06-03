@@ -4,13 +4,13 @@
     font-family: "Inconsolata";
     font-size: 16px;
     min-height: 0;
-    color: #ebdbb2;
+    color: #c0c5ce;
 }
 
 window#waybar {
     border-bottom-style: inset;
-    border-bottom: 4px solid #689d6a;
-    background: transparent /*#1d2021*/;
+    border-bottom: 4px solid #a3be8c;
+    background: transparent;
 }
 
 #workspaces, #clock, #custom-music, #window { 
@@ -19,7 +19,7 @@ window#waybar {
 
 /* Workspace Buttons */
 #workspaces button label{
-    color: #689d6a;
+    color: #a3be8c;
 }
 #workspaces button.focused label {
     color: #1d2021;
@@ -44,41 +44,41 @@ window#waybar {
 }
 
 #idle_inhibitor.activated {
-    background-color: #689d6a;
+    background-color: #a3be8c;
     color: #1d2021;
 }
 
 
 #custom-music {
-    color: #b8bb26;
+    color: #ecbe7b;
     margin: 0 15px;
     padding: 0 20px;
-    border-bottom: 4px solid #b8bb26;
+    border-bottom: 4px solid #ecbe7b;
 
 }
 
 
 #network.disconnected {
-    color: #cc241d;
-    border-bottom: 4px solid #cc241d;
+    color: #bf616a;
+    border-bottom: 4px solid #bf616a;
 }
 
 
 #pulseaudio.muted {
     padding: 0 20px;
-    color: #cc241d;
-    border-bottom: 4px solid #cc241d;
+    color: #bf616a;
+    border-bottom: 4px solid #bf616a;
 }
 
 
 #clock {
     margin: 0;
-    color: #fabd2f;
-    border-bottom: 4px solid #fabd2f;
+    color: #d08770;
+    border-bottom: 4px solid #d08770;
 }
 
 #window {
     margin: 0;
-    color: #d3869b;
-    border-bottom: 4px solid #d3869b;
+    color: #8fa1b3;
+    border-bottom: 4px solid #8fa1b3;
 }

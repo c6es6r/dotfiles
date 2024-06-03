@@ -1,0 +1,45 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "inconsolata";
+    font-size: 16px;
+    min-height: 0;
+    color: #29353f;
+}
+
+window#waybar {
+    border-bottom-style: inset;
+    border-bottom: 4px solid #2d912e;
+    background: transparent;
+}
+
+
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #tray, #mode, #idle_inhibitor {
+    padding: 0 5px;
+    margin: 0 10px;
+}
+
+#network.disconnected {
+    color: #cc241d;
+    border-bottom: 4px solid #6e1e3f;
+}
+
+
+#pulseaudio.muted {
+    padding: 0 20px;
+    color: #cc241d;
+    border-bottom: 4px solid #6e1e3f;
+}
+
+
+#clock {
+    margin: 0;
+    color: #f4d984;
+    border-bottom: 4px solid #f4d984;
+}
+
+#window {
+    margin: 0;
+    color: #f4d984;
+    border-bottom: 4px solid #f4d984;
+}
